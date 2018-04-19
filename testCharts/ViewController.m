@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "testCharts-Bridging-Header.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    BarChartView *chartView = [[BarChartView alloc] initWithFrame:self.view.bounds];
+    chartView.backgroundColor = [UIColor colorWithRed:0.184 green:1.000 blue:0.738 alpha:1.000];
+    [self.view addSubview:chartView];
 }
 
 
