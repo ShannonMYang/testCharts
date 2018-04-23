@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40AB906208DC69A0018B778 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40AB905208DC69A0018B778 /* LineViewController.m */; };
 		B4379EA120884EE400518496 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4379EA020884EE400518496 /* AppDelegate.m */; };
 		B4379EA420884EE400518496 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4379EA320884EE400518496 /* ViewController.m */; };
 		B4379EA920884EE500518496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4379EA820884EE500518496 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* Begin PBXFileReference section */
 		1A5A2E4DD4C65264D4881E94 /* Pods-testCharts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testCharts.release.xcconfig"; path = "Pods/Target Support Files/Pods-testCharts/Pods-testCharts.release.xcconfig"; sourceTree = "<group>"; };
 		93D557C960567883253A7DDD /* Pods_testCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40AB904208DC69A0018B778 /* LineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
+		B40AB905208DC69A0018B778 /* LineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		B4379E9C20884EE400518496 /* testCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4379E9F20884EE400518496 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4379EA020884EE400518496 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				B4379EA020884EE400518496 /* AppDelegate.m */,
 				B4379EA220884EE400518496 /* ViewController.h */,
 				B4379EA320884EE400518496 /* ViewController.m */,
+				B40AB904208DC69A0018B778 /* LineViewController.h */,
+				B40AB905208DC69A0018B778 /* LineViewController.m */,
 				B4379EA820884EE500518496 /* Assets.xcassets */,
 				B4379EAD20884EE500518496 /* Info.plist */,
 				B4379EAE20884EE500518496 /* main.m */,
@@ -209,6 +214,7 @@
 			files = (
 				B4379EA420884EE400518496 /* ViewController.m in Sources */,
 				B4379EAF20884EE500518496 /* main.m in Sources */,
+				B40AB906208DC69A0018B778 /* LineViewController.m in Sources */,
 				B4379EA120884EE400518496 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
