@@ -7,8 +7,11 @@
 //
 
 #import "LineViewController.h"
+#import "testCharts-Bridging-Header.h"
 
-@interface LineViewController ()
+@interface LineViewController () <ChartViewDelegate>
+
+@property (nonatomic, strong) LineChartView *chartView;
 
 @end
 
@@ -16,12 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"LineChart";
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self initLineChartView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initLineChartView
+{
+    self.chartView.noDataText = @"暂无数据";
+    self.chartView.noDataFont = [UIFont fontWithName:@"PingFang-SC-Regular" size:18.f];
+    
+    self.chartView.delegate = self;
+    self.chartView.chartDescription.enabled = NO;
+    self.chartView.dragEnabled = YES;
+    [self.chartView setScaleEnabled:YES];
+    self.chartView.pinchZoomEnabled = YES;
+    self.chartView.drawGridBackgroundEnabled = NO;
 }
 
 /*

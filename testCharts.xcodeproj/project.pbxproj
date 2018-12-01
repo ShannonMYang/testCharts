@@ -12,6 +12,7 @@
 		B4379EA420884EE400518496 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4379EA320884EE400518496 /* ViewController.m */; };
 		B4379EA920884EE500518496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4379EA820884EE500518496 /* Assets.xcassets */; };
 		B4379EAF20884EE500518496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4379EAE20884EE500518496 /* main.m */; };
+		B4DDBDE2209997A700737452 /* ScatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DDBDE1209997A700737452 /* ScatterViewController.m */; };
 		B6336732214A0C9688547D61 /* Pods_testCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D557C960567883253A7DDD /* Pods_testCharts.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		B4379EAD20884EE500518496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4379EAE20884EE500518496 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4379EBC208857C600518496 /* testCharts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testCharts-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4DDBDE0209997A700737452 /* ScatterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScatterViewController.h; sourceTree = "<group>"; };
+		B4DDBDE1209997A700737452 /* ScatterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScatterViewController.m; sourceTree = "<group>"; };
 		DB8593060890E0D9F27DE6D3 /* Pods-testCharts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testCharts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testCharts/Pods-testCharts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +74,8 @@
 				B4379EA320884EE400518496 /* ViewController.m */,
 				B40AB904208DC69A0018B778 /* LineViewController.h */,
 				B40AB905208DC69A0018B778 /* LineViewController.m */,
+				B4DDBDE0209997A700737452 /* ScatterViewController.h */,
+				B4DDBDE1209997A700737452 /* ScatterViewController.m */,
 				B4379EA820884EE500518496 /* Assets.xcassets */,
 				B4379EAD20884EE500518496 /* Info.plist */,
 				B4379EAE20884EE500518496 /* main.m */,
@@ -169,7 +174,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-testCharts/Pods-testCharts-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-testCharts/Pods-testCharts-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/ChartsRealm/ChartsRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -184,7 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testCharts/Pods-testCharts-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testCharts/Pods-testCharts-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BFB8F383CEF36B9DF90C2657 /* [CP] Check Pods Manifest.lock */ = {
@@ -212,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DDBDE2209997A700737452 /* ScatterViewController.m in Sources */,
 				B4379EA420884EE400518496 /* ViewController.m in Sources */,
 				B4379EAF20884EE500518496 /* main.m in Sources */,
 				B40AB906208DC69A0018B778 /* LineViewController.m in Sources */,

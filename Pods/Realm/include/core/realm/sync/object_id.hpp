@@ -30,6 +30,9 @@
 #include <realm/util/optional.hpp>
 #include <realm/string_data.hpp>
 #include <realm/data_type.hpp>
+#include <realm/util/metered/map.hpp>
+#include <realm/util/metered/set.hpp>
+#include <realm/util/metered/string.hpp>
 
 // Only set this to one when testing the code paths that exercise object ID
 // hash collisions. It artificially limits the "optimistic" local ID to use
@@ -124,6 +127,8 @@ public:
     static LocalObjectID global_to_local_object_id_squeezed(ObjectID);
     static ObjectID local_to_global_object_id_squeezed(LocalObjectID);
 
+    virtual void table_erased(size_t table_ndx) = 0;
+
     virtual int_fast64_t get_client_file_ident() const = 0;
 };
 
@@ -135,10 +140,35 @@ public:
     void erase(StringData table, ObjectID object_id);
     bool contains(StringData table, ObjectID object_id) const noexcept;
 
-private:
-
     // A map from table name to a set of object ids.
-    std::map<std::string, std::set<ObjectID>, std::less<>> m_objects;
+    util::metered::map<std::string, util::metered::set<ObjectID>> m_objects;
+};
+
+// FieldSet is a set of fields in tables. A field is defined by a
+// table name, a column in the table and an object id for the row.
+class FieldSet {
+public:
+
+    void insert(StringData table, StringData column, ObjectID object_id);
+    void erase(StringData table, StringData column, ObjectID object_id);
+    bool contains(StringData table, ObjectID object_id) const noexcept;
+    bool contains(StringData table, StringData column, ObjectID object_id) const noexcept;
+
+    // A map from table name to a map from column name to a set of
+    // object ids.
+    util::metered::map<
+        std::string,
+        util::metered::map<std::string, util::metered::set<ObjectID>>
+    >  m_fields;
+};
+
+struct GlobalID {
+    StringData table_name;
+    ObjectID object_id;
+
+    bool operator==(const GlobalID& other) const;
+    bool operator!=(const GlobalID& other) const;
+    bool operator<(const GlobalID& other) const;
 };
 
 /// Implementation:
@@ -166,6 +196,24 @@ constexpr bool ObjectID::operator!=(const ObjectID& other) const
 {
     return !(*this == other);
 }
+
+inline bool GlobalID::operator==(const GlobalID& other) const
+{
+    return object_id == other.object_id && table_name == other.table_name;
+}
+
+inline bool GlobalID::operator!=(const GlobalID& other) const
+{
+    return !(*this == other);
+}
+
+inline bool GlobalID::operator<(const GlobalID& other) const
+{
+    if (table_name == other.table_name)
+        return object_id < other.object_id;
+    return table_name < other.table_name;
+}
+
 
 std::ostream& operator<<(std::ostream&, const realm::sync::ObjectID&);
 
