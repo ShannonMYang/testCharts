@@ -4,6 +4,6 @@
 
 - ###### 散点图
   > 效果如下所示：
-<div align = center><img width = "436" height = "869" src = "https://github.com/ShannonMYang/testCharts/blob/master/imagesFile/scatterCharts.png">
+<div align = center><img width = "436" height = "869" src = "https://github.com/ShannonMYang/testCharts/blob/master/imagesFile/scatter.png">
 </div>
 
