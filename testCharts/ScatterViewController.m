@@ -108,8 +108,8 @@
 {
     NSMutableArray *dataEntry = [[NSMutableArray alloc] init];
     
-    self.xAxisArray = @[@"123.456", @"156.623", @"235.211", @"301.110", @"192.232", @"750.611", @"231.232"];
-    self.yAxisArray = @[@"555.220", @"752.112", @"612.221", @"123.123", @"456.114", @"112.444", @"755.114"];
+    self.xAxisArray = @[@"123", @"156", @"235", @"301", @"192", @"691", @"231", @"555", @"341", @"283"];
+    self.yAxisArray = @[@"555", @"752", @"612", @"123", @"456", @"112", @"755", @"397", @"456", @"657"];
     
     for (int i = 0; i < self.xAxisArray.count; i++) {
         [dataEntry addObject:[[ChartDataEntry alloc] initWithX:[self.xAxisArray[i] doubleValue]
